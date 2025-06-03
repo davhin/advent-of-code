@@ -1,0 +1,15 @@
+[project]
+name = "aoc-py"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ email = "dvd.hnrchs@gmail.com" }]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+aocpy = "aoc_py:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

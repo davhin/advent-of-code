@@ -1,0 +1,83 @@
+# =======================
+# Python
+# =======================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.so
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+develop-eggs/
+pip-wheel-metadata/
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.cache/
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# pyinstaller
+*.manifest
+*.spec
+
+# =======================
+# Rust
+# =======================
+/target/
+**/target/
+Cargo.lock
+
+# Rust core dumps and backups
+*.rs.bk
+*.rs~
+*.dSYM/
+*.stackdump
+
+# Rust byproducts from tooling
+*.rlib
+*.rmeta
+
+# =======================
+# Common/OS/Tooling
+# =======================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.iml
+
+# Git
+.git/
+*.orig
+
