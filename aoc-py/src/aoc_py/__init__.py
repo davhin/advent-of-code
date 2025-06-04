@@ -1,6 +1,7 @@
 import argparse
 from pathlib import Path
 from aoc_py import year2024
+import glob
 
 SOLUTIONS = {"year2024": {"day1": year2024.day1}}
 HERE = Path(__file__).parent
@@ -8,9 +9,6 @@ DATAPATH = HERE / ".." / ".." / ".." / "data"
 
 
 def main() -> None:
-    import sys
-
-    print("Arguments received:", sys.argv)
     global DATAPATH
     parser = argparse.ArgumentParser(description="My CLI")
     parser.add_argument("year", help="AoC year")
@@ -21,10 +19,14 @@ def main() -> None:
     args = parser.parse_args()
     module = SOLUTIONS[args.year][args.day]
     DATAPATH = DATAPATH / args.year / args.day
+    files = [f for f in DATAPATH.resolve().glob("*") if f.is_file()]
+    files = sorted(files)
     if args.test:
         func = module.test
-        filepath = (DATAPATH / "test.txt").resolve()
+        files = [file for file in files if "test" in str(file)]
+
     else:
         func = module.main
-        filepath = (DATAPATH / "main.txt").resolve()
-    func(filepath)
+        files = [file for file in files if "task" in str(file)]
+    # filepaths = [(DATAPATH / file).resolve() for file in files]
+    func(*files)
