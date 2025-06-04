@@ -1,7 +1,6 @@
 import argparse
 from pathlib import Path
 from aoc_py import year2024
-import glob
 
 SOLUTIONS = {"year2024": {"day1": year2024.day1}}
 HERE = Path(__file__).parent
@@ -28,5 +27,4 @@ def main() -> None:
     else:
         func = module.main
         files = [file for file in files if "task" in str(file)]
-    # filepaths = [(DATAPATH / file).resolve() for file in files]
     func(*files)
