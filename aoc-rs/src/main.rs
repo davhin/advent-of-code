@@ -3,6 +3,20 @@ use std::env;
 use std::fs;
 use std::path::Path;
 
+struct Config {
+    year: String,
+    day: String,
+}
+
+impl Config {
+    fn new(args: &Vec<String>) -> Config {
+        Config {
+            year: args[0].to_string(),
+            day: args[1].to_string(),
+        }
+    }
+}
+
 fn get_filepaths_in_dir(dir_path: String) -> std::io::Result<Vec<String>> {
     let mut filepaths = Vec::new();
     let path = Path::new(&dir_path);
@@ -31,4 +45,6 @@ fn main() {
     for file in files {
         println!("Found {file:?}");
     }
+    let args = vec!["2024".to_string(), "01".to_string()];
+    let config = Config::new(&args);
 }
